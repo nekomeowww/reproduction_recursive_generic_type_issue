@@ -1,8 +1,10 @@
 # recursive generic type reproduction
 
-This repository showed how to reproduce the compiler unexpected behavior, or issue, bug when embedding a struct that has a field to reference the outer struct by using generic recursively, the compiler will complain `fatal error: all goroutines are asleep - deadlock!` or behave unexpectedly in all different ways.
+This repository showed how to reproduce the compiler unexpected behavior, or issue, bug when embedding a struct that has a field to reference the outer struct by using generic recursively: the compiler will complain `fatal error: all goroutines are asleep - deadlock!` or behave unexpectedly in all different ways.
 
-Well I could understand the limitations of the current implementation for generics and the "should avoid" with recursive type embedding, but I still think this is a issue that the compiler or documentation should address when user attempts to do so. Especially it runs successfully and within the expectation when you change the package of `main_test.go` into `recursive_generic_type_issue_reproduction` without the `_test` prefix, you, as being a Golang developer, might only find out what has been wrong after you released the library without the `_test` test packages test included. Even though such unexpected behavior could be resolved by `GOEXPERIMENT=nounified` flag[^1] and reported rarely, it's still a bit confusing for users to understand what's going on. At least it jammed me for a while.
+Well I could understand the limitations of the current implementation for generics and the "should avoid" with recursive type embedding, but I still think this is a issue that the compiler or documentation should address when user attempts to do so. Especially it runs successfully and within the expectation when you change the package of `main_test.go` into `recursive_generic_type_issue_reproduction` without the `_test` prefix. You, as being a Golang developer, might only find out what has been wrong after you released the library without the `_test` test packages test included and caused the compiler issue and complains for all your users.
+
+Even though such unexpected behavior could be resolved by `GOEXPERIMENT=nounified` flag[^1] and reported rarely, it's still a bit confusing for users to understand what's going on. At least it jammed me for a while.
 
 ## Behaviors
 
