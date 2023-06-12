@@ -2,11 +2,11 @@
 
 This repository showed how to reproduce the compiler unexpected behavior, or issue, bug when a struct that has a field to reference the outer struct that has a field to reference the initial struct by using generic in the way recursively: the compiler will complain `fatal error: all goroutines are asleep - deadlock!` or other behave unexpectedly in all different ways.
 
-Well I could understand the limitations of the current implementation for generics and the "should avoid" with recursive types, but I still think this is a issue that the compiler or documentation should address when user attempts to do so. Especially it runs successfully without generating the needed assembly codes, and ran successfully when you change the package of `main_test.go` into `recursive_generic_type_issue_reproduction` without the `_test` suffix. Imaging, you, as being a Golang developer, might only find out what has been wrong after you released the library without the `_test` test packages test included and caused the compiler issue and complains for all your users.
+## Expected
 
-Even though such unexpected behavior could be resolved by `GOEXPERIMENT=nounified` flag[^1] and reported rarely (or even nobody have mentioned so far), it's still a bit confusing for users to understand what's going on.
-
-At least it jammed me for a while.
+- Compiler or documentation should address the issue when user attempts to do so.
+- Compiler should have a consistent behavior when user attempts to do so.
+- Compiler should produce the needed assembly codes for the generic recursive types or produces error or warning messages when user attempts to do so.
 
 ## Behaviors
 
@@ -49,5 +49,17 @@ This is the most needed directory structure for reproducing the issue, each case
 ### Issue 3: redeclared in this block
 
 - [when defining one of the type parameter of type `innerT` with union type](./minimum_repro/unstable_redeclare_issue/seperated_files)
+
+## How do I think?
+
+TL;DR: It behaves confusingly for users to understand what's going on. At least it jammed me for a while. And I think it should be fixed or addressed by the compiler or documentation.
+
+Even though I could understand the limitations of the current implementation for generics and the "should avoid" with recursive types, but still, I think this is a issue that either Golang team needs to decide whether the compiler or documentation should address when user attempts to do so or Golang team fixes such issue and turns it into the expected way.
+
+Especially it runs successfully without generating the needed assembly codes, and ran successfully when you change the package of `main_test.go` into `recursive_generic_type_issue_reproduction` without the `_test` suffix while developing. Imaging you as being a Golang developer, might only find out what has been wrong after you released the library without the `_test` test packages test included and caused the compiler issue and complains for all your users, as I stated out in [**disappeared** deadlock error when using generics **without** test package (`_test` suffix)](./minimum_repro/deadlock_issue/with_generics_without_test_package) case.
+
+## Workaround?
+
+Such unexpected behavior could be resolved by `GOEXPERIMENT=nounified` flag[^1] and it is rarely reported (or even nobody have mentioned so far and so detailed).
 
 [^1]: [cmd/compile: failed to compile some recursive generic type · Issue #54535 · golang/go](https://github.com/golang/go/issues/54535)
