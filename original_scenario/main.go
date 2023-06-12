@@ -1,4 +1,4 @@
-package recursive_generic_type_issue_reproduction
+package original_scenario
 
 import (
 	"fmt"
