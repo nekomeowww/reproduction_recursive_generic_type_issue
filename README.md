@@ -50,6 +50,10 @@ This is the most needed directory structure for reproducing the issue, each case
 
 - [when defining one of the type parameter of type `innerT` with union type](./minimum_repro/unstable_redeclare_issue/seperated_files)
 
+## How did I encounter?
+
+I was working on an experimental channel wrapper utilities library in [nekomeowww/xo/exp](https://github.com/nekomeowww/xo/tree/main/exp), and I tried to discover the possibility of using generics to make the common options assignment easier and more readable by using chained calls pattern in [`exp/channelx/puller.go`](https://github.com/nekomeowww/xo/commit/cf486f5ea50b84c6df530b1203f5d82a5a4dbc0c#diff-d45899a6268a5dbaf2b914a1e382cfa7d495f9079dfd161624e123dde032c05e). You could see I commented out all the examples in the [`exp/channelx/example_test.go`](https://github.com/nekomeowww/xo/commit/cf486f5ea50b84c6df530b1203f5d82a5a4dbc0c#diff-c489abd579609224cb8d2b19e42f630cfe8fb1420a5a630b93d760c3b02b5787) in commit [`cf486f5`](https://github.com/nekomeowww/xo/commit/cf486f5ea50b84c6df530b1203f5d82a5a4dbc0c) just because I got stucked by the compiler error `fatal error: all goroutines are asleep - deadlock!` with the test package (`_test` suffix) included for examples. I didn't realized that the problem was came from by Golang compiler it self, just because the tests in [`exp/channelx/puller_test.go`](https://github.com/nekomeowww/xo/commit/cf486f5ea50b84c6df530b1203f5d82a5a4dbc0c#diff-518be0525b26d5ac85efe6f40ba39e23b6d0f92540123409d98d7ab7d50c73de) can be run successfully and without any problem until now.
+
 ## How do I think?
 
 TL;DR: It behaves confusingly for users to understand what's going on. At least it jammed me for a while. And I think it should be fixed or addressed by the compiler or documentation.
