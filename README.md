@@ -1,4 +1,4 @@
-# recursive generic type reproduction
+# recursive generic type issue reproduction
 
 This repository showed how to reproduce the compiler unexpected behavior, or issue, bug when a struct that has a field to reference the outer struct that has a field to reference the initial struct by using generic in the way recursively: the compiler will complain `fatal error: all goroutines are asleep - deadlock!` or other behave unexpectedly in all different ways.
 
