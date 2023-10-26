@@ -72,8 +72,8 @@ go build -v ./minimum_repro/unstable_invalid_recursive_issue/seperated_files
 
 ```shell
 go build -v ./minimum_repro/unstable_invalid_recursive_issue/seperated_files
-github.com/nekomeowww/recursive_generic_type_issue_reproduction/minimum_repro/unstable_invalid_recursive_issue/seperated_files
-# github.com/nekomeowww/recursive_generic_type_issue_reproduction/minimum_repro/unstable_invalid_recursive_issue/seperated_files
+github.com/nekomeowww/reproduction_recursive_generic_type_issue/minimum_repro/unstable_invalid_recursive_issue/seperated_files
+# github.com/nekomeowww/reproduction_recursive_generic_type_issue/minimum_repro/unstable_invalid_recursive_issue/seperated_files
 minimum_repro/unstable_invalid_recursive_issue/seperated_files/file_1.go:3:6: invalid recursive type T2
         minimum_repro/unstable_invalid_recursive_issue/seperated_files/file_1.go:3:6: T2 refers to
         minimum_repro/unstable_invalid_recursive_issue/seperated_files/file_2.go:5:6: innerT refers to

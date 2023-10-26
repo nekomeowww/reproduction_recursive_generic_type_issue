@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/nekomeowww/recursive_generic_type_issue_reproduction/original_scenario"
+	"github.com/nekomeowww/reproduction_recursive_generic_type_issue/original_scenario"
 )
 
 func TestMain(m *testing.M) {

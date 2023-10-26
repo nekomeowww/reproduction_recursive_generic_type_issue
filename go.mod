@@ -1,4 +1,4 @@
-module github.com/nekomeowww/recursive_generic_type_issue_reproduction
+module github.com/nekomeowww/reproduction_recursive_generic_type_issue
 
 go 1.20
 

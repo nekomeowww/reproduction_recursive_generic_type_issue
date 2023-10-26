@@ -21,7 +21,7 @@ go test -v ./minimum_repro/deadlock_issue/with_generics
 
 ```shell
 $ go test -v ./minimum_repro/deadlock_issue/with_generics
-# github.com/nekomeowww/recursive_generic_type_issue_reproduction/minimum_repro/deadlock_issue/with_generics_test [github.com/nekomeowww/recursive_generic_type_issue_reproduction/minimum_repro/deadlock_issue/with_generics.test]
+# github.com/nekomeowww/reproduction_recursive_generic_type_issue/minimum_repro/deadlock_issue/with_generics_test [github.com/nekomeowww/reproduction_recursive_generic_type_issue/minimum_repro/deadlock_issue/with_generics.test]
 fatal error: all goroutines are asleep - deadlock!
 
 goroutine 1 [sync.Mutex.Lock]:
@@ -133,7 +133,7 @@ cmd/compile/internal/gc.Main(0x101137ad0)
         /opt/homebrew/Cellar/go/1.20.3/libexec/src/cmd/compile/internal/gc/main.go:196 +0xcd8
 main.main()
         /opt/homebrew/Cellar/go/1.20.3/libexec/src/cmd/compile/main.go:57 +0xf4
-FAIL    github.com/nekomeowww/recursive_generic_type_issue_reproduction/minimum_repro/deadlock_issue/with_generics [build failed]
+FAIL    github.com/nekomeowww/reproduction_recursive_generic_type_issue/minimum_repro/deadlock_issue/with_generics [build failed]
 FAIL
 ```
 

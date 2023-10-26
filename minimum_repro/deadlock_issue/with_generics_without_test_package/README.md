@@ -24,7 +24,7 @@ $ go test -v ./minimum_repro/deadlock_issue/with_generics_without_test_package
 === RUN   TestT1
 --- PASS: TestT1 (0.00s)
 PASS
-ok      github.com/nekomeowww/recursive_generic_type_issue_reproduction/minimum_repro/deadlock_issue/with_generics_without_test_package 0.004s
+ok      github.com/nekomeowww/reproduction_recursive_generic_type_issue/minimum_repro/deadlock_issue/with_generics_without_test_package 0.004s
 ```
 
 </details>

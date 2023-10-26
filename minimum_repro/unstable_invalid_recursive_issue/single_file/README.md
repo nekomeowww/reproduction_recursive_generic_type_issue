@@ -30,10 +30,10 @@ type T2[T any] struct {
 
 ```shell
 go build -gcflags=-S ./minimum_repro/unstable_invalid_recursive_issue/single_file
-# github.com/nekomeowww/recursive_generic_type_issue_reproduction/minimum_repro/unstable_invalid_recursive_issue/single_file
-go:cuinfo.producer.github.com/nekomeowww/recursive_generic_type_issue_reproduction/minimum_repro/unstable_invalid_recursive_issue/single_file SDWARFCUINFO dupok size=0
+# github.com/nekomeowww/reproduction_recursive_generic_type_issue/minimum_repro/unstable_invalid_recursive_issue/single_file
+go:cuinfo.producer.github.com/nekomeowww/reproduction_recursive_generic_type_issue/minimum_repro/unstable_invalid_recursive_issue/single_file SDWARFCUINFO dupok size=0
         0x0000 2d 73 68 61 72 65 64 20 72 65 67 61 62 69        -shared regabi
-go:cuinfo.packagename.github.com/nekomeowww/recursive_generic_type_issue_reproduction/minimum_repro/unstable_invalid_recursive_issue/single_file SDWARFCUINFO dupok size=0
+go:cuinfo.packagename.github.com/nekomeowww/reproduction_recursive_generic_type_issue/minimum_repro/unstable_invalid_recursive_issue/single_file SDWARFCUINFO dupok size=0
         0x0000 73 69 6e 67 6c 65 5f 66 69 6c 65                 single_file
 ```
 
